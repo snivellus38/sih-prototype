@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Supply Chain DApp</title>
+  <style>
+    body {
+      font-family: Inter, system-ui, Arial;
+      padding: 24px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    button,
+    input {
+      padding: 8px 10px;
+      margin: 6px 0;
+    }
+
+    pre {
+      background: #f7f7f7;
+      padding: 12px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>🌾 Supply Chain DApp</h1>
+  <button id="connectWallet">Connect Wallet</button>
+  <p id="walletAddress">MetaMask status: unknown</p>
+
+  <h2>Register Batch</h2>
+  <form id="registerForm">
+    <input id="crop" placeholder="Crop (e.g. Tomato)" required />
+    <input id="quantity" type="number" placeholder="Quantity (kg)" required />
+    <input id="ipfsHash" placeholder="IPFS Hash (Qm...)" required />
+    <button type="submit">Register</button>
+  </form>
+
+  <h2>Inspector</h2>
+  <input id="inspectorAddr" placeholder="Address to add as inspector (owner only)" />
+  <button id="addInspectorBtn">Add Inspector</button>
+  <div style="margin-top:8px;">
+    <input id="verifyBatchId" placeholder="Batch ID to verify" />
+    <select id="verifyStatus">
+      <option>PASSED</option>
+      <option>FAILED</option>
+    </select>
+    <button id="verifyBtn">Verify Batch</button>
+  </div>
+
+  <h2>Get Batch</h2>
+  <input id="batchId" placeholder="Batch ID" />
+  <button id="getBatchBtn">Fetch</button>
+  <pre id="batchOutput">No batch fetched yet.</pre>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
