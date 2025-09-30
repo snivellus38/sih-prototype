@@ -32,8 +32,7 @@ contract SupplyChain {
 
     constructor() {
         owner = msg.sender;
-        inspectors[msg.sender] = true; // deployer as test inspector
-    }
+        inspectors[msg.sender] = true;
 
     function registerBatch(
         string memory crop,
